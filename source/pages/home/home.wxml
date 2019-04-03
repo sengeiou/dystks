@@ -1,0 +1,49 @@
+<view style=''>
+  <swiper indicator-dots='true' autoplay='false' interval='3000' duration='500' circular='true' style='height:300rpx;'>
+    <swiper-item wx:key="k" wx:for="{{indexbanner}}" wx:key="k">
+      <view>
+        <image bindtap='toother' data-id="{{item.appid}}" id="{{uploadpath}}indexbanner/{{item.img}}" src='{{uploadpath}}indexbanner/{{item.img}}' style='width:100vw;height:300rpx;' mode=""></image>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+
+<view class="flex-row flex-center bg-primary padding-30">
+  <image class='icon-50 radius-50' src="{{UserInfo.avatarUrl}}" style='border:5rpx solid white'> </image>
+  <view class="txt-white margin-left-20">{{UserInfo.nickName}}</view>
+</view>
+
+<!-- 
+<navigator url='/pages/errordatabase/errordatabase' class="padding-30 flex-row flex-center border-bottom bg-white">
+  <image class='icon-30  ' src='{{uploadpath}}resource/{{res.wrong_topic}}'></image>
+  <view class=" txt-black flex-1 margin-left-20">错题库</view>
+  <image class='icon-15  ' src='{{uploadpath}}resource/{{res.right_icon}}'></image>
+</navigator> -->
+
+<view class="margin-30  flex-row flex-center ">
+  <view  bindtap='xuexi' class="flex-1 bk  flex-row flex-center ">
+    <view class="flex-1 txt-black text-center">学习</view>
+    <image class='icon-15  ' src='{{uploadpath}}resource/{{res.right_icon}}'></image>
+  </view>
+  <view bindtap='lianxi' class="flex-1 bk  flex-row flex-center  margin-left-20">
+    <view class="flex-1 txt-black text-center">练习</view>
+    <image class='icon-15  ' src='{{uploadpath}}resource/{{res.right_icon}}'></image>
+  </view>
+</view>
+
+
+<button class=' clear-button ' open-type='share' style='border-radius:0'>
+  <view class="fx padding-30 flex-row flex-center bg-white">
+
+    <view class=" txt-black text-center flex-1 margin-left-20">分享小程序</view>
+    <image class='icon-15  ' src='{{uploadpath}}resource/{{res.right_icon}}'></image>
+  </view>
+</button>
+
+
+<official-account></official-account>
+<view class='  bg-primary txt-white Advertising' style=' width:100%;'>
+  <ad unit-id="adunit-04f170483ea78d1c"></ad>
+</view>

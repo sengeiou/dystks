@@ -1,0 +1,115 @@
+<view class="bg  flex-row    gudin " style='border-bottom:1rpx solid #E5E5E5'>
+
+
+  <view bindtap='shouye' class=' flex-row flex-column'>
+
+    <view class='txt-bold margin-top-5' style='color:#4c556e'>首页</view>
+  </view>
+
+  <view class="flex-1"></view>
+
+  <view class='  flex-row flex-column'>
+
+    <view class=' margin-top-5 txt-black h4'>答题</view>
+  </view>
+
+
+  <view class="flex-1"></view>
+
+
+  <view class='   flex-row flex-column '>
+
+    <view class='txt-bold margin-top-5' style='color:#4c556e'>{{sj}}s</view>
+  </view>
+
+</view>
+<view style='height:90rpx'></view>
+
+<view class="text-center margin-top-20 txt-black ">
+  {{shijuan[0].zjjs}}
+
+</view>
+<block wx:for="{{timu}}"  wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
+  <!-- 多选未答题 -->
+  <view id="q{{tihao}}">
+  <view class="padding-20 txt-black h4-6 txt-bold1">
+
+    {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
+  </view>
+
+  <view wx:if="{{disciplinetm.type=='S'}}">
+    <block wx:for="{{disciplinetm.status_name}}" wx:if="{{duoxuan[1]!=''}}" wx:for-index="idx" wx:for-item="duoxuan" wx:key="k">
+      <view wx:if="{{disciplinetm.option_a!=''}}" bindtap='dati' data-duoxuan="{{idx}}" data-timu="{{idxx}}" data-idd="{{disciplinetm.type}}" data-daan="{{disciplinetm.anwser}}" data-tihao="{{tihao}}" data-id="{{disciplinetm.id}}" id="{{duoxuan[0]}}" class='padding-20'>
+
+        <view class="flex-row  txt-black">
+          <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
+          <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
+          <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
+          <view class="flex-1 txt-black h4-6 txt-bold1">
+            {{duoxuan[1]}}</view>
+        </view>
+      </view>
+    </block>
+
+  </view>
+  <!-- 单选未答题 -->
+  <view wx:if="{{disciplinetm.type=='R'}}">
+
+    <black wx:for="{{disciplinetm.status_name}}" wx:if="{{item[1]!=''}}" wx:for-index="idx" wx:key='k'>
+
+      <view bindtap='dati' data-idd="{{disciplinetm.type}}" data-tihao="{{tihao}}" data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}" id="{{item[0]}}" class='padding-20'>
+
+        <view class="flex-row  txt-black">
+          <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
+          <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
+
+          <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
+          <view class="flex-1 txt-black h4-6 txt-bold1">
+            {{item[1]}}</view>
+        </view>
+      </view>
+    </black>
+
+
+
+  </view>
+</view>
+</block>
+
+<view style='height:90rpx'></view>
+<view class="qiehuan  flex-center flex-row   " style='z-index:10'>
+
+  <view bindtap='xuanti' class="flex-1 text-center txt-white h4" style='padding:20rpx'>选题</view>
+  <view class=" text-center txt-white">|</view>
+  <view bindtap='jiaojuan' class="flex-1 text-center txt-white h4" style='padding:20rpx'>交卷</view>
+</view>
+
+
+
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove='{{true}}' wx:if="{{istrue}}"></view>
+<view class="modal-dialog" wx:if="{{istrue}}">
+
+  <view class="padding-20" style='border-bottom:1px solid gray'>
+    {{tishu}}/{{timu.length}}
+  </view>
+
+  <view style='height:70vh;'>
+    <view class="  " style='width:100%;display:flex;flex-wrap: wrap;'>
+
+      <block wx:for="{{timu}}" wx:for-index="idx" wx:key="k">
+        <view id='{{item.seq}}' data-shunxu="{{idx}}" data-idd="{{item.id}}" bindtap='tiaoti' class=" {{item.xz==''?'zq':'sc'}} text-center  flex-center flex-row">
+
+          <view class="flex-1"></view>{{item.seq}}
+          <view class="flex-1"></view>
+
+        </view>
+
+      </block>
+
+
+
+    </view>
+  </view>
+</view>

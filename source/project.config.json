@@ -1,0 +1,59 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.0",
+	"appid": "wxcdcb21983d5da570",
+	"projectname": "%E8%80%83%E7%A0%94%E5%88%B7%E9%A2%98%E8%80%83%E8%AF%95",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "222",
+					"pathName": "pages/cjph/cjph",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "答题界面",
+					"pathName": "pages/ks/ks",
+					"query": "id=1",
+					"scene": null
+				}
+			]
+		}
+	}
+}

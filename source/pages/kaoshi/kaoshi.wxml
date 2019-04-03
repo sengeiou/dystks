@@ -1,0 +1,70 @@
+<view style=''>
+
+  <scroll-view scroll-x class='txt-black margin-left-20   style margin-20'>
+    <block wx:for="{{kemulist}}" wx:key="k"  wx:for-index="idx">
+      <view bindtap='gotoCat' id="{{item.id}}" class="discipline h5 padding-20 {{item.id==xuanzhon?'xuanzhon':''}} ">
+        {{item.name}}
+      </view>
+
+    </block>
+  </scroll-view>
+
+</view>
+<block wx:for="{{kemuleibie}}" wx:key='k'  wx:for-item="item" wx:if="{{item.kemu_id==xuanzhon&&item.xianshi}}">
+  <view bindtap='gotoCat1' id="{{item.id}}" class='flex-row   flex-center padding-30' style='border-bottom:1px solid #e5e5e5'>
+    <view class='flex-1 txt-black h4'>{{item.name}}</view>
+    <view></view>
+    <image class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.bottom_icon}}'></image>
+  </view>
+
+  <block wx:for="{{shijuanlist}}" wx:key='k' wx:for-item="item1" wx:if="{{item1.kemuleibie_id==xuanzhon1&&item.id==item1.kemuleibie_id}}">
+   
+    <view data-lian="{{item1.unlocknum}}" data-dan="{{item1.ifunlock}}" bindtap='{{item1.ifunlock<item1.unlocknum?"jiesuo":"kaoshi"}}' id="{{item1.id}}" data-id="{{item1.id}}" data-fxid="{{memberinfo.id}}" class='adsad'>
+      <view class='flex-row flex-center margin-30 padding-bottom-30' style='border-bottom:1rpx solid gray'>
+
+        <view class='flex-1 txt-black '>{{item1.name}}</view>
+        <view></view>
+        <image wx:if="{{item1.ifunlock>=item1.unlocknum}}" class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.unlock}}'></image>
+
+       
+          <image wx:if="{{item1.ifunlock<item1.unlocknum}}" class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.suo}}'></image>
+       
+      </view>
+    </view>
+
+  </block>
+
+</block>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">邀请{{jiesuoshu}}个好友点击即可解锁，解锁后下拉刷新界面可查看本章内容</view>
+
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+     <button open-type='share' data-id="{{zhanjie}}" data-fxid="{{fenxianid}}" class='anniu'>
+    确定
+    </button>
+  </view>
+</view>
+
+
+<view class='cache' bindtap='clearcache'>
+  <image src="{{uploadpath}}resource/{{res.clearcache}}"></image>
+</view>

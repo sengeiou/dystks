@@ -1,0 +1,42 @@
+Page {
+  background: #f4f4f4;
+}
+
+.top {
+  background-color: #4c556e;
+  height: 240rpx;
+}
+
+.attention {
+  padding-left: 20rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  padding-right: 20rpx;
+}
+
+.mid {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.Advertising {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.bk{
+  border:1rpx solid  #BFBFBF;
+  border-radius: 15rpx;
+  background-color: white;
+  padding:30rpx
+}
+.fx{
+
+  margin-left:30rpx;
+  margin-right:30rpx;
+   border:1rpx solid  #BFBFBF;
+  border-radius: 15rpx;
+}
+

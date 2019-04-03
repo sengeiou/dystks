@@ -1,0 +1,25 @@
+<view class="bg padding-20 flex-row flex-center text-center " style='height:80rpx'>
+    <view class=" txt-bold text-left" style='color:#4c556e' bindtap='zhangjie'>首页</view>
+  <text style='width:350rpx' class=" flex-1  txt-block txt-bold"> 考试回顾</text>
+
+
+
+  <view class=" txt-bold text-right" style='color:#4c556e' bindtap='fanhui'>返回</view>
+
+</view>
+
+<view class="flex-center " style='border:width:100%;display:flex;flex-wrap: wrap; '>
+
+  <block wx:for="{{disciplinetm}}" wx:key="k">
+    <view  id='{{item.seq}}' data-idd="{{item.id}}" data-id='{{disciplinetm[0].shijuan_id}}' bindtap='xuanti' class=" {{item.anwser==item.isanwser?'zq':((item.isanwser=='')?'sc':'cw')}}  text-center  flex-center flex-row">
+
+      <view class="flex-1"></view>{{item.seq}}
+      <view class="flex-1"></view>
+
+    </view>
+  
+</block>
+  
+
+
+</view>

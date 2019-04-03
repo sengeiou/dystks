@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/kaoqian/kaoqian",
+    "pages/kaoshi/kaoshi",
+    "pages/ks/ks",
+    "pages/lianxi/lianxi",
+    "pages/kaoshihg/kaoshihg",
+    "pages/kaoshihgxt/kaoshihgxt",
+    "pages/cjph/cjph",
+    "pages/auth/auth",
+    "pages/questions/questions"
+  ],
+   "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#FFFFFF",
+    "backgroundColor": "#4c556e",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "images/icons/西药(2).png",
+        "selectedIconPath": "images/icons/西药(1).png"
+      },
+      {
+        "text": "考试",
+        "pagePath": "pages/kaoshi/kaoshi",
+        "iconPath": "images/icons/中医灰.png",
+        "selectedIconPath": "images/icons/中医(2).png"
+      }
+     
+    ]
+    
+  }
+  ,
+  "navigateToMiniProgramAppIdList": [
+    "wxce8dfd9950dacbe7",
+    "wx59cda72fdbc6ef18"
+  ]
+}

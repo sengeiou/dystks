@@ -1,0 +1,23 @@
+<view class="padding-20 flex-row flex-center xiahuaxian">
+
+  <view  bindtap='shouye'>首页</view>
+  <view class="flex-1"></view>
+  <view>考试回顾</view>
+  <view class="flex-1"></view>
+  <view bindtap='fanhui'>返回</view>
+</view>
+<view class="padding-20 ">
+ <block wx:for="{{dtjl}}"  wx:key='k' >
+  
+  <view bindtap='kshg' id="{{item.id}}" class="padding-20 flex-row xiabiankuang">
+    <view class="flex-1">第{{item.cishu}}次答题</view>
+    <view>
+      <image class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.you_icon}}'></image>
+    </view>
+  </view>
+ </block>
+
+</view>
+<view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
+      <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
+    </view>

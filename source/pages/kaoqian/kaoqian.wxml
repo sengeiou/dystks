@@ -1,0 +1,30 @@
+<view class="padding-20 flex-row flex-center xiahuaxian">
+
+  <view  bindtap='shouye' >首页</view>
+  <view class="flex-1"></view>
+  <view>{{shijuan[0].name}}</view>
+  <view class="flex-1"></view>
+  <view  bindtap='fanhui'  >返回</view>
+</view>
+<view class="padding-20 ">
+  <view  bindtap='kaoshi' class="padding-40 flex-row xiabiankuang">
+    <view class="flex-1 h4">开始答题</view>
+    <view> <image class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.you_icon}}'></image></view>
+  </view>
+   <view bindtap='kshg' class="padding-40 flex-row xiabiankuang">
+    <view class="flex-1 h4">考试回顾</view>
+    <view> <image class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.you_icon}}'></image></view>
+  </view>
+   <view bindtap='cjph' class="padding-40 flex-row xiabiankuang">
+    <view class="flex-1 h4">成绩排行</view>
+    <view> <image class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.you_icon}}'></image></view>
+  </view>
+
+</view>
+
+
+
+<official-account></official-account>
+<view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
+      <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
+    </view>

@@ -1,0 +1,18 @@
+/* pages/cjph/cjph.wxss */
+.bg1{
+background-color: #bbbbbb;
+
+}
+.bg2{
+background-color: #858a96;
+
+}
+.xhx{
+
+border-bottom:1px solid #bbbbbb;
+
+
+}
+.xz{
+  color: white
+}

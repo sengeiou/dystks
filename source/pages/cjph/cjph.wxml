@@ -1,0 +1,54 @@
+<view class="bg1 padding-20 flex-row flex-center text-center">
+
+  <view bindtap='xuanze' id="0" class="flex-1 {{xuanzhon==0?'xz':''}} ">我的成绩</view>
+
+  <view>|</view>
+  <view bindtap='xuanze' id="1" class="flex-1 {{xuanzhon==1?'xz':''}} ">全部考生</view>
+</view>
+<view wx:if="{{xuanzhon==0}}">
+  <view class="bg2 padding-20 flex-row flex-center  text-center">
+
+    <view class="flex-1">顺序</view>
+
+    <view>|</view>
+    <view class="flex-1">成绩</view>
+
+    <view>|</view>
+    <view class="flex-1">排名</view>
+  </view>
+  <bolck wx:for="{{ksjlph}}" wx:key='k' wx:for-index="idx">
+    <view class="padding-20 xhx">
+      <view class="flex-row flex-center text-center ">
+        <view class="flex-1">{{item.cishu}}</view>
+        <view class="flex-1">{{item.score}}分</view>
+        <view class="flex-1">{{idx+1}}名</view>
+      </view>
+    </view>
+  </bolck>
+
+</view>
+<view wx:if="{{xuanzhon==1}}">
+<view class="h6 text-balck text-center padding-10" >(此排行榜仅显示历次答题最高分排名)</view>
+  <view class="bg2 padding-20 flex-row flex-center  text-center">
+
+    <view class="flex-1">头像</view>
+    <view class="flex-1">昵称</view>
+    <view class="flex-1">成绩</view>
+    <view class="flex-1">排名</view>
+  </view>
+
+  <bolck wx:for="{{ksjlph}}"  wx:key='k' wx:for-index="idx">
+    <view class="padding-20 xhx">
+      <view class="flex-row flex-center text-center ">
+
+        <view class="flex-1">
+          <image class='icon radius-50' src="{{item.member_avatarUrl}}" style='border:5rpx solid white'> </image>
+        </view>
+        <view class="flex-1">{{item.member_id_name}}</view>
+        <view class="flex-1">{{item.score}}分</view>
+        <view class="flex-1">第{{idx+1}}名</view>
+      </view>
+
+    </view>
+  </bolck>
+</view>

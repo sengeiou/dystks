@@ -1,0 +1,8 @@
+.xiahuaxian{
+
+  border:1px solid gainsboro;
+}
+.xiabiankuang{
+
+   border-bottom:1px solid gainsboro;
+}

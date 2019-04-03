@@ -1,0 +1,35 @@
+.style {
+  width: 95%;
+  height: 70rpx;
+  white-space: nowrap;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.anniu{
+ width:50%;
+ height:100%;
+
+ }
+ .adsad{
+ background-color: #EEEEEE;
+
+}
+
+.discipline {
+  text-align:center;
+ width:140rpx;
+  display: inline-block;
+}
+.xuanzhon{
+  text-align:center;
+  width:140rpx;
+  background-color: #4c556e;
+color: white
+
+
+}

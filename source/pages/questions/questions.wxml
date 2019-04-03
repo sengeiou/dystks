@@ -1,0 +1,292 @@
+<view class="bg  flex-row flex-center gudin " style='border-bottom:1rpx solid #E5E5E5'>
+
+
+  <view bindtap='shouye' class=' flex-row flex-column'>
+
+    <view class='txt-bold margin-top-5' style='color:#4c556e'>首页</view>
+  </view>
+
+  <view class="flex-1"></view>
+
+  <view bindtap='' class='  flex-row flex-column'>
+
+    <view class=' margin-top-5 txt-black h4'>考试回顾</view>
+  </view>
+
+
+  <view class="flex-1"></view>
+
+
+  <view bindtap='xuanti' class='   flex-row flex-column '>
+
+    <view class='txt-bold margin-top-5' style='color:#4c556e'>选题</view>
+  </view>
+
+</view>
+
+<view style='height:90rpx'></view>
+
+
+<scroll-view scroll-y bindtouchstart='touchStart' bindtouchend="touchEnd" class='white-block gaodu   '>
+
+  <view class="padding-20 txt-black h4-6 txt-bold1">
+
+    {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type=='R'?'单选题':'多选题'}}）
+  </view>
+
+  <!-- 多选未答题 -->
+  <view wx:if="{{disciplinetm.isanwser==''&&disciplinetm.id!=idd&&disciplinetm.type=='S'}}">
+    <block wx:for="{{disciplinetm.status_name}}" wx:if="{{duoxuan[1]!=''}}" wx:for-index="idx" wx:for-item="duoxuan" wx:key="k">
+      <view wx:if="{{disciplinetm.option_a!=''}}" bindtap='select' data-duoxuan="{{idx}}" data-timu="{{idxx}}" data-idd="{{disciplinetm.type}}" data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}" id="{{duoxuan[0]}}" class='padding-20'>
+
+        <view class="flex-row  txt-black">
+          <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
+          <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
+          <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
+          <view class="flex-1 txt-black h4-6 txt-bold1">
+            {{duoxuan[1]}}</view>
+        </view>
+      </view>
+    </block>
+    <!-- <view wx:if="{{disciplinetm.option_b!=''}}" bindtap='select' data-duoxuan="duoxuan2" id="B" class='padding-20'>
+
+          <view class="flex-row  txt-black">
+            <image wx:if="{{!duoxuan2}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.wuxuanxiang}}'></image>
+            <image wx:if="{{duoxuan2}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.xuanze}}'></image>
+            <view class="margin-left-10">B.</view>
+            <view class="flex-1">
+              {{disciplinetm.option_b}}</view>
+          </view>
+        </view>
+        <view wx:if="{{disciplinetm.option_c!=''}}" bindtap='select' data-duoxuan="duoxuan3" id="C" class='padding-20'>
+
+          <view class="flex-row  txt-black">
+            <image wx:if="{{!duoxuan3}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.wuxuanxiang}}'></image>
+            <image wx:if="{{duoxuan3}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.xuanze}}'></image>
+            <view class="margin-left-10">C.</view>
+            <view class="flex-1">
+              {{disciplinetm.option_c}}</view>
+          </view>
+        </view>
+        <view wx:if="{{disciplinetm.option_d!=''}}" bindtap='select' data-duoxuan="duoxuan4" id="D" class='padding-20'>
+
+          <view class="flex-row  txt-black">
+            <image wx:if="{{!duoxuan4}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.wuxuanxiang}}'></image>
+            <image wx:if="{{duoxuan4}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.xuanze}}'></image>
+            <view class="margin-left-10">D.</view>
+            <view class="flex-1">
+              {{disciplinetm.option_d}}</view>
+          </view>
+        </view>
+        <view wx:if="{{disciplinetm.option_e!=''}}" bindtap='select' data-duoxuan="duoxuan5" id="E" class='padding-20'>
+
+          <view class="flex-row  txt-black">
+            <image wx:if="{{!duoxuan5}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.wuxuanxiang}}'></image>
+            <image wx:if="{{duoxuan5}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.xuanze}}'></image>
+            <view class="margin-left-10">E.</view>
+            <view class="flex-1">
+              {{disciplinetm.option_e}}</view>
+          </view>
+        </view>
+        <view wx:if="{{disciplinetm.option_f!=''}}" bindtap='select' data-duoxuan="duoxuan6" id="F" class='padding-20'>
+
+          <view class="flex-row  txt-black">
+            <image wx:if="{{!duoxuan6}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.wuxuanxiang}}'></image>
+            <image wx:if="{{duoxuan6}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.xuanze}}'></image>
+            <view class="margin-left-10">F.</view>
+            <view class="flex-1">
+              {{disciplinetm.option_f}}</view>
+          </view>
+        </view>
+        <view wx:if="{{disciplinetm.option_g!=''}}" bindtap='select' data-duoxuan="duoxuan7" id="G" class='padding-20'>
+
+          <view class="flex-row  txt-black">
+            <image wx:if="{{!duoxuan7}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.wuxuanxiang}}'></image>
+            <image wx:if="{{duoxuan7}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.xuanze}}'></image>
+            <view class="margin-left-10">G.</view>
+            <view class="flex-1">
+              {{disciplinetm.option_g}}</view>
+          </view>
+        </view>
+        <view wx:if="{{disciplinetm.option_h!=''}}" bindtap='select' data-duoxuan="duoxuan8" id="H" class='padding-20'>
+
+          <view class="flex-row  txt-black">
+            <image wx:if="{{!duoxuan8}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.wuxuanxiang}}'></image>
+            <image wx:if="{{duoxuan8}}" class='icon-20 ' src='{{uploadpath}}resource/{{res.xuanze}}'></image>
+            <view class="margin-left-10">H.</view>
+            <view class="flex-1">
+              {{disciplinetm.option_h}}</view>
+          </view>
+        </view> -->
+
+    <view class="flex-row  " style='margin-top:70rpx;'>
+      <view class="flex-1"></view>
+      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> -->
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
+      <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
+    </view>
+  </view>
+  <!-- 单选未答题 -->
+  <view wx:if="{{disciplinetm.isanwser==''&&disciplinetm.id!=idd&&disciplinetm.type=='R'}}">
+    <black wx:for="{{disciplinetm.status_name}}" wx:if="{{item[1]!=''}}" wx:for-index="idx" wx:key='k'>
+
+      <view bindtap='radioChange' data-idd="{{disciplinetm.type}}" data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}" id="{{item[0]}}" class='padding-20'>
+
+        <view class="flex-row  txt-black">
+          <image wx:if="{{xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
+          <image wx:if="{{xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
+
+          <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
+          <view class="flex-1 txt-black h4-6 txt-bold1">
+            {{item[1]}}</view>
+        </view>
+      </view>
+    </black>
+
+    <view class="flex-row  " style='margin-top:70rpx;'>
+      <view class="flex-1"></view>
+      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6 tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> -->
+      <view class="flex-1"></view>
+    </view>
+    <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
+      <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
+    </view>
+  </view>
+  <!-- 单选已答题 -->
+  <view wx:if="{{(disciplinetm.isanwser!=''||disciplinetm.id==idd)&&disciplinetm.type=='R'}}">
+
+    <view class="radio-group" name="alert_id" bindchange="radioChange">
+
+      <black wx:for="{{disciplinetm.status_name}}" wx:if="{{item[1]!=''}}" wx:for-index="idx" wx:key='k'>
+        <view class='padding-20'>
+
+
+          <view class="flex-row  txt-black">
+            <view>
+              <image wx:if="{{disciplinetm.anwser!=item[0]&&disciplinetm.isanwser!=item[0]&&daan!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
+            </view>
+            <view>
+              <image wx:if="{{disciplinetm.anwser==item[0]}}" class='icon-20 ' src='/images/icons/xuanduile.png'></image>
+            </view>
+            <view>
+              <image wx:if="{{(disciplinetm.anwser!=disciplinetm.isanwser&&disciplinetm.isanwser==item[0])||(daan!=disciplinetm.anwser&&daan==item[0])}}" class='icon-20 ' src='/images/icons/xuancuole.png'></image>
+            </view>
+            <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
+            <view class="flex-1 h4-6 txt-black txt-bold1">
+              {{item[1]}}</view>
+          </view>
+
+
+        </view>
+      </black>
+
+
+
+
+    </view>
+
+    <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
+      <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
+    </view>
+
+    <view class="padding-20 ">
+       <view wx:if="{{disciplinetm.anwser==disciplinetm.isanwser}}" style='color:#259b24' class="txt-green h4-5">恭喜你,答对了</view>
+      <view wx:if="{{disciplinetm.anwser!=disciplinetm.isanwser}}" class="txt-red h4-5">很抱歉,答错了</view>
+      <view class="margin-top-20">
+        <text class="h4-5 txt-bold1 " style='color:#259b24'>正确答案:{{disciplinetm.anwser}}</text>
+       
+        <text class="h4-5 txt-bold1 " style='color:red;margin-left:50rpx'>我的选择:{{disciplinetm.isanwser}}</text>
+      </view>
+      <view class="margin-top-20 h4-5 txt-bold1 txt-black">答案解析:</view>
+
+      <view class="margin-top-20 txt-black    " style='padding-bottom:100rpx' id="mjltest">
+        <text class="user-motto h4-5 txt-black txt-bold1 " decode="{{true}}">{{disciplinetm.title_anwser}}</text>
+      </view>
+    </view>
+
+
+
+  </view>
+  <!-- 多选已答题 -->
+  <view wx:if="{{(disciplinetm.isanwser!=''||disciplinetm.id==idd)&&disciplinetm.type=='S'}}">
+
+    <view class="radio-group" name="alert_id" bindchange="radioChange">
+
+      <black wx:for="{{disciplinetm.status_name}}" wx:if="{{item[1]!=''}}" wx:for-index="idx" wx:key='k'>
+        <view class='padding-20'>
+
+
+          <view class="flex-row  txt-black">
+            <view>
+              <image wx:if="{{disciplinetm[item[3]]==-1&&disciplinetm[item[4]]==-1}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
+            </view>
+            <view>
+              <image wx:if="{{disciplinetm[item[3]]>=0}}" class='icon-20 ' src='/images/icons/xuanduile.png'></image>
+            </view>
+            <view>
+              <image wx:if="{{disciplinetm[item[3]]==-1&&disciplinetm[item[4]]>=0}}" class='icon-20 ' src='/images/icons/xuancuole.png'></image>
+            </view>
+            <view class="margin-left-10 h4-6 txt-black txt-bold1">{{item[0]}}. </view>
+            <view class="flex-1 h4-6 txt-black txt-bold1">
+              {{item[1]}}</view>
+          </view>
+
+
+        </view>
+      </black>
+
+
+
+
+    </view>
+
+    <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
+      <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
+    </view>
+    <view class="padding-20 ">
+         <view wx:if="{{disciplinetm.anwser==disciplinetm.isanwser}}" style='color:#259b24' class="txt-green h4-5">恭喜你,答对了</view>
+      <view wx:if="{{disciplinetm.anwser!=disciplinetm.isanwser}}" class="txt-red h4-5">很抱歉,答错了</view>
+      <view class="margin-top-20">
+        <text class="h4-5 txt-bold1 " style='color:#259b24'>正确答案:{{disciplinetm.anwser}}</text>
+       
+        <text class="h4-5 txt-bold1 " style='color:red;margin-left:50rpx'>我的选择:{{disciplinetm.isanwser}}</text>
+      </view>
+      <view class="margin-top-20 h4-5 txt-bold1 txt-black">答案解析:</view>
+
+      <view class="margin-top-20 txt-black    " style='padding-bottom:100rpx' id="mjltest">
+        <text class="user-motto h4-5 txt-bold1 txt-black  " decode="{{true}}">{{disciplinetm.title_anwser}}</text>
+      </view>
+    </view>
+
+
+
+  </view>
+
+
+</scroll-view>
+
+
+
+
+
+<!-- <view class='bg-gray Advertising' style='height:400rpx;'>
+广告位置
+</view> -->
+
+<view class="qiehuan  flex-center flex-row   " style='z-index:10'>
+  
+  <view bindtap='paihanban' class="flex-1 text-center txt-white h4" style='padding:20rpx'>排行榜</view>
+  <view class=" text-center txt-white">|</view>
+  <view bindtap='syt' class="flex-1 text-center txt-white h4" style='padding:20rpx'>上一题</view>
+  <view class=" text-center txt-white">|</view>
+  <view bindtap='xyt' class="flex-1 text-center txt-white h4" style='padding:20rpx'>下一题</view>
+</view>
+
+
+<!-- <view class="qiehuan  flex-center flex-row   " style='z-index:10'>
+  <view bindtap='syt' class="flex-1 text-center txt-white" style='padding:20rpx'>向右滑/上一题</view>
+  <view class=" text-center txt-white">|</view>
+  <view bindtap='xyt' class="flex-1 text-center txt-white" style='padding:20rpx'>向左滑/下一题</view>
+</view> -->
