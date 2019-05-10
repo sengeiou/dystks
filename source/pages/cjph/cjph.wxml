@@ -8,20 +8,24 @@
 <view wx:if="{{xuanzhon==0}}">
   <view class="bg2 padding-20 flex-row flex-center  text-center">
 
-    <view class="flex-1">顺序</view>
+    <view class="flex-1 txt-white">顺序</view>
 
     <view>|</view>
-    <view class="flex-1">成绩</view>
+    <view class="flex-1 txt-white">成绩</view>
 
     <view>|</view>
-    <view class="flex-1">排名</view>
+    <view class="flex-1 txt-white" >排名</view>
+   
   </view>
-  <bolck wx:for="{{ksjlph}}" wx:key='k' wx:for-index="idx">
-    <view class="padding-20 xhx">
+  <bolck wx:for="{{ksjlph}}" wx:key='k' wx:if="{{item.member_id==memberinfo.id}}" wx:for-index="idx">
+    <view bindtap='kshg' id="{{item.id}}" class="padding-20 xhx">
       <view class="flex-row flex-center text-center ">
         <view class="flex-1">{{item.cishu}}</view>
         <view class="flex-1">{{item.score}}分</view>
         <view class="flex-1">{{idx+1}}名</view>
+         <view>
+      <image class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.you_icon}}'></image>
+    </view>
       </view>
     </view>
   </bolck>
@@ -31,10 +35,10 @@
 <view class="h6 text-balck text-center padding-10" >(此排行榜仅显示历次答题最高分排名)</view>
   <view class="bg2 padding-20 flex-row flex-center  text-center">
 
-    <view class="flex-1">头像</view>
-    <view class="flex-1">昵称</view>
-    <view class="flex-1">成绩</view>
-    <view class="flex-1">排名</view>
+    <view class="flex-1 txt-white">头像</view>
+    <view class="flex-1 txt-white">昵称</view>
+    <view class="flex-1 txt-white">成绩</view>
+    <view class="flex-1 txt-white">排名</view>
   </view>
 
   <bolck wx:for="{{ksjlph}}"  wx:key='k' wx:for-index="idx">

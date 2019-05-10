@@ -144,4 +144,16 @@ background-attachment: fixed;
 background-size: 100% auto; 
 background-repeat: no-repeat; 
 }
+.zidx{
+
+height:calc( 100vh - 200rpx );
+
+
+}
+.zidx1{
+
+height:calc( 100vh - 270rpx );
+
+
+}
 

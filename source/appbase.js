@@ -115,10 +115,29 @@ export class AppBase {
       contactweixin: base.contactweixin,
       download: base.download,
       checkPermission: base.checkPermission,
+     
 fanhui: base.fanhui
 
 
     }
+  }
+  onShareAppMessage(e) {
+
+    var id = e.target.dataset.id;
+    console.log("牛逼+"+id);
+    var fxmember = e.target.dataset.fxid;
+    console.log("牛逼+" + fxmember);
+    this.Base.setMyData({ showModal: false });
+    return {
+
+      title: '大家帮我点一下吧',
+
+      desc: '分享页面的内容',
+
+      path: '/pages/home/home?id=' + id + '&fenxianid=' + fxmember
+
+    }
+
   }
   log() {
     console.log("yeah!");
@@ -306,6 +325,7 @@ fanhui: base.fanhui
   }
   onHide() {
     console.log("onHide");
+    console.log(123132);
   }
   onUnload() {
     console.log("onUnload");
@@ -318,10 +338,7 @@ fanhui: base.fanhui
   onReachBottom() {
     console.log("onReachBottom");
   }
-  onShareAppMessage() {
-
-
-  }
+ 
 
   dataReturn(data) {
     var pages = getCurrentPages();

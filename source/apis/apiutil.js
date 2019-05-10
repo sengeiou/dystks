@@ -1,6 +1,113 @@
 import { ApiConfig } from 'apiconfig.js';
 
 export class ApiUtil {
+  static   chnNumChar = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+  static  chnUnitSection = ["", "万", "亿", "万亿", "亿亿"];
+  static  chnUnitChar = ["", "十", "百", "千"];
+
+
+
+  static numToChn(num) {
+    var index = num.toString().indexOf(".");
+    if (index != -1) {
+      var str = num.toString().slice(index);
+      var a = "点";
+      for (var i = 1; i < str.length; i++) {
+        a += ApiUtil.chnNumChar[parseInt(str[i])];
+      }
+      return a;
+    } else {
+      return;
+    }
+  }
+  static sectionToChinese(section) {
+    var str = '', chnstr = '', zero = false, count = 0;   //zero为是否进行补零， 第一次进行取余由于为个位数，默认不补零
+    while (section > 0) {
+      var v = section % 10;  //对数字取余10，得到的数即为个位数
+      if (v == 0) {                    //如果数字为零，则对字符串进行补零
+        if (zero) {
+          zero = false;        //如果遇到连续多次取余都是0，那么只需补一个零即可
+          chnstr = ApiUtil.chnNumChar[v] + chnstr;
+        }
+      } else {
+        zero = true;           //第一次取余之后，如果再次取余为零，则需要补零
+        str = ApiUtil.chnNumChar[v];
+        str += ApiUtil.chnUnitChar[count];
+        chnstr = str + chnstr;
+      }
+      count++;
+      section = Math.floor(section / 10);
+    }
+    return chnstr;
+  }
+
+  static TransformToChinese(num) {
+    var a = ApiUtil.numToChn(num);
+    num = Math.floor(num);
+    var unitPos = 0;
+    var strIns = '', chnStr = '';
+    var needZero = false;
+
+    if (num === 0) {
+      return ApiUtil.chnNumChar[0];
+    }
+    while (num > 0) {
+      var section = num % 10000;
+      if (needZero) {
+        chnStr = ApiUtil.chnNumChar[0] + chnStr;
+      }
+      strIns = ApiUtil.sectionToChinese(section);
+      strIns += (section !== 0) ? ApiUtil.chnUnitSection[unitPos] : ApiUtil.chnUnitSection[0];
+      chnStr = strIns + chnStr;
+      needZero = (section < 1000) && (section > 0);
+      num = Math.floor(num / 10000);
+      unitPos++;
+    }
+
+    return chnStr ;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   static renamelist = [];
   static HtmlDecode(str) {
@@ -174,6 +281,8 @@ export class ApiUtil {
     return overWan ? getWan(overWan) + "万" + getWan(noWan) : getWan(num);
 
   }
+
+  
 
 
 }

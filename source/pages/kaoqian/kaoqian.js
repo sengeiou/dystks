@@ -10,6 +10,7 @@ class Content extends AppBase {
   onLoad(options) {
     this.Base.Page = this;
     //options.id=5;
+    wx.hideShareMenu();
     super.onLoad(options);
   }
   onMyShow() {
@@ -34,7 +35,7 @@ class Content extends AppBase {
     wx.navigateTo({
       url: '/pages/ks/ks?id=' + this.Base.options.id,
     })
-
+   
   }
   shouye() {
     wx.switchTab({

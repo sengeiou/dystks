@@ -9,6 +9,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
+    wx.hideShareMenu();
     //options.id=5;
     super.onLoad(options);
     this.Base.setMyData({ xuanzhon: 0 });
@@ -19,7 +20,7 @@ class Content extends AppBase {
     var xuanzhon=this.Base.getMyData().xuanzhon;
     if (xuanzhon==0)
     {
-    api.ksjlph({ shijuan_id: this.Base.options.id, orderby: 'score desc', member_id: this.Base.getMyData().memberinfo.id },
+    api.ksjlph({ shijuan_id: this.Base.options.id, orderby: 'score desc' },
       (ksjlph) => {
 
         for (var i = 0; i < ksjlph.length; i++) {
@@ -62,7 +63,7 @@ class Content extends AppBase {
     if (e.target.id == 0) {
       member = this.Base.getMyData().memberinfo.id;
       var api = new InstApi();
-      api.ksjlph({ shijuan_id: this.Base.options.id, orderby: 'score desc', member_id: member },
+      api.ksjlph({ shijuan_id: this.Base.options.id, orderby: 'score desc' },
         (ksjlph) => {
           for (var i = 0; i < ksjlph.length; i++) {
             var a = ksjlph[i].score;
@@ -100,10 +101,18 @@ class Content extends AppBase {
 
 
   }
+  kshg(e) {
+
+    wx.navigateTo({
+      url: '/pages/kaoshihgxt/kaoshihgxt?id=' + e.currentTarget.id,
+    })
+
+  }
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
 body.onMyShow = content.onMyShow;
 body.xuanze = content.xuanze;
+body.kshg=content.kshg;
 Page(body)

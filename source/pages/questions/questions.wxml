@@ -35,7 +35,7 @@
   </view>
 
   <!-- 多选未答题 -->
-  <view wx:if="{{disciplinetm.isanwser==''&&disciplinetm.id!=idd&&disciplinetm.type=='S'}}">
+  <!-- <view wx:if="{{disciplinetm.isanwser==''&&disciplinetm.id!=idd&&disciplinetm.type=='S'}}">
     <block wx:for="{{disciplinetm.status_name}}" wx:if="{{duoxuan[1]!=''}}" wx:for-index="idx" wx:for-item="duoxuan" wx:key="k">
       <view wx:if="{{disciplinetm.option_a!=''}}" bindtap='select' data-duoxuan="{{idx}}" data-timu="{{idxx}}" data-idd="{{disciplinetm.type}}" data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}" id="{{duoxuan[0]}}" class='padding-20'>
 
@@ -117,19 +117,19 @@
             <view class="flex-1">
               {{disciplinetm.option_h}}</view>
           </view>
-        </view> -->
+        </view> 
 
     <view class="flex-row  " style='margin-top:70rpx;'>
       <view class="flex-1"></view>
-      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> -->
+      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> 
       <view class="flex-1"></view>
     </view>
     <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
       <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
     </view>
-  </view>
+<!-- </view>  -->
   <!-- 单选未答题 -->
-  <view wx:if="{{disciplinetm.isanwser==''&&disciplinetm.id!=idd&&disciplinetm.type=='R'}}">
+  <!-- <view wx:if="{{disciplinetm.isanwser==''&&disciplinetm.id!=idd&&disciplinetm.type=='R'}}">
     <black wx:for="{{disciplinetm.status_name}}" wx:if="{{item[1]!=''}}" wx:for-index="idx" wx:key='k'>
 
       <view bindtap='radioChange' data-idd="{{disciplinetm.type}}" data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}" id="{{item[0]}}" class='padding-20'>
@@ -147,15 +147,15 @@
 
     <view class="flex-row  " style='margin-top:70rpx;'>
       <view class="flex-1"></view>
-      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6 tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> -->
+      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6 tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> 
       <view class="flex-1"></view>
     </view>
     <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
       <ad unit-id="adunit-f0b14ce2b342d8bf"></ad>
     </view>
-  </view>
+  <!-- </view> --> 
   <!-- 单选已答题 -->
-  <view wx:if="{{(disciplinetm.isanwser!=''||disciplinetm.id==idd)&&disciplinetm.type=='R'}}">
+  <view wx:if="{{(1==1||disciplinetm.id==idd)&&disciplinetm.type=='R'}}">
 
     <view class="radio-group" name="alert_id" bindchange="radioChange">
 
@@ -197,7 +197,7 @@
       <view class="margin-top-20">
         <text class="h4-5 txt-bold1 " style='color:#259b24'>正确答案:{{disciplinetm.anwser}}</text>
        
-        <text class="h4-5 txt-bold1 " style='color:red;margin-left:50rpx'>我的选择:{{disciplinetm.isanwser}}</text>
+        <text class="h4-5 txt-bold1 " style='color:red;margin-left:50rpx'>我的选择:{{disciplinetm.isanwser==''?'未答':disciplinetm.isanwser}} </text>
       </view>
       <view class="margin-top-20 h4-5 txt-bold1 txt-black">答案解析:</view>
 
@@ -210,7 +210,7 @@
 
   </view>
   <!-- 多选已答题 -->
-  <view wx:if="{{(disciplinetm.isanwser!=''||disciplinetm.id==idd)&&disciplinetm.type=='S'}}">
+  <view wx:if="{{(1==1||disciplinetm.id==idd)&&disciplinetm.type=='S'}}">
 
     <view class="radio-group" name="alert_id" bindchange="radioChange">
 

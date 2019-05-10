@@ -9,6 +9,7 @@ class Content extends AppBase {
   }
   onLoad(options) {
     this.Base.Page = this;
+    wx.hideShareMenu();
     //options.id=5;
     super.onLoad(options);
   }
@@ -16,11 +17,16 @@ class Content extends AppBase {
     var that = this;
     var api = new InstApi();
     api.ksjlph({ shijuan_id: this.Base.options.id, member_id: this.Base.getMyData().memberinfo.id, orderby:'cishu'},(dtjl)=>{
-        for(var i=0;i<dtjl.length;i++)
-        {
-          dtjl[i].cishu = ApiUtil.toChinesNum(dtjl[i].cishu);
+        // for(var i=0;i<dtjl.length;i++)
+        // {
+        //   dtjl[i].cishu = ApiUtil.TransformToChinese(dtjl[i].cishu);
+        //   if(i>=9&&i<19)
+        //   {
+        //     dtjl[i].cishu=  dtjl[i].cishu.substring(1);
+        //   }
+         
 
-        }
+        // }
       this.Base.setMyData({ dtjl: dtjl});
     })
   }

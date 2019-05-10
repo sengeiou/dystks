@@ -11,8 +11,6 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-  }
-  onMyShow() {
     var that = this;
     var coursesct_id = this.Base.options.id;
 
@@ -40,12 +38,12 @@ class Content extends AppBase {
       },
       fail: function (error) {
         console.log("有个锤子");
-       
+
         var api = new InstApi();
-        api.kghgall({ ksjl: that.Base.options.id }, (disciplinetm) => {
+        api.kghgall({ ksjl: that.Base.options.id, orderby: 'seq' }, (disciplinetm) => {
           that.Base.setMyData({ disciplinetm: disciplinetm })
 
-      
+
 
           wx.setStorage({
             key: that.Base.options.id,
@@ -54,7 +52,7 @@ class Content extends AppBase {
 
 
           setTimeout(function () {
-            api.kghgall({ ksjl: that.Base.options.id, }, (disciplinetm) => {
+            api.kghgall({ ksjl: that.Base.options.id, orderby: 'seq' }, (disciplinetm) => {
               that.Base.setMyData({ disciplinetm: disciplinetm });
 
               wx.setStorage({
@@ -75,6 +73,9 @@ class Content extends AppBase {
       }
 
     })
+  }
+  onMyShow() {
+  
 
   }
   xuanti(e) {

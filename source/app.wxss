@@ -585,7 +585,7 @@ button::after{ border: none; }
 .modal-title {
   padding: 40rpx;
  
-  font-size: 28rpx;
+  font-size: 32rpx;
   color: #030303;
   text-align: center;
 }

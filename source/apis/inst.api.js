@@ -169,6 +169,38 @@ export class InstApi{
         })
     }
 
+    jiesuo(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'inst/jiesuo',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+
     kemu(json, callback, showLoading = true) {
 
         if (showLoading)
@@ -211,6 +243,38 @@ export class InstApi{
         console.log(json);
         wx.request({
             url: ApiConfig.GetApiUrl() + 'inst/kemuleibie',
+            data: json,
+            method: 'POST',
+            dataType: 'json',
+            header: header,
+            success: function (res) {
+                if (callback != null) {
+                    callback(res.data);
+                }
+            },
+            fail: function (res) {
+                console.log(res);
+                callback(false);
+            },
+            complete: function (res) {
+                console.log(res);
+            
+                if (showLoading)
+                    ApiConfig.CloseLoading();
+            }
+        })
+    }
+
+    kghgall(json, callback, showLoading = true) {
+
+        if (showLoading)
+            ApiConfig.ShowLoading();
+
+        var header = ApiConfig.GetHeader();
+        console.log(header);
+        console.log(json);
+        wx.request({
+            url: ApiConfig.GetApiUrl() + 'inst/kghgall',
             data: json,
             method: 'POST',
             dataType: 'json',
@@ -329,7 +393,7 @@ export class InstApi{
         })
     }
 
-    kghgall(json, callback, showLoading = true) {
+    mima(json, callback, showLoading = true) {
 
         if (showLoading)
             ApiConfig.ShowLoading();
@@ -338,7 +402,7 @@ export class InstApi{
         console.log(header);
         console.log(json);
         wx.request({
-            url: ApiConfig.GetApiUrl() + 'inst/kghgall',
+            url: ApiConfig.GetApiUrl() + 'inst/mima',
             data: json,
             method: 'POST',
             dataType: 'json',

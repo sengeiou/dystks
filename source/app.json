@@ -30,8 +30,8 @@
       {
         "text": "首页",
         "pagePath": "pages/home/home",
-        "iconPath": "images/icons/西药(2).png",
-        "selectedIconPath": "images/icons/西药(1).png"
+        "iconPath": "images/icons/我的灰.png",
+        "selectedIconPath": "images/icons/我的.png"
       },
       {
         "text": "考试",

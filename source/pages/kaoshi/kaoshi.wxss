@@ -33,3 +33,14 @@ color: white
 
 
 }
+.modal-dialog {
+  width: 580rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: -180rpx 85rpx;
+  border-radius: 36rpx;
+}
