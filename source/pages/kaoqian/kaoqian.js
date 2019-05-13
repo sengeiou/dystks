@@ -32,8 +32,16 @@ class Content extends AppBase {
   }
   kaoshi() {
     console.log(111);
+    var pg=(new Date()).getTime()%7;
+    if(pg==0){
+      pg="";
+    }else{
+      pg=pg.toString();
+    }
+
+
     wx.navigateTo({
-      url: '/pages/ks/ks?id=' + this.Base.options.id,
+      url: '/pages/ks/ks' + pg + '?time=' + (new Date()).getTime()+'&id=' + this.Base.options.id,
     })
    
   }
