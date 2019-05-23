@@ -73,8 +73,13 @@
 <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}"></view>
 <view class="modal-dialog"  wx:if="{{showModal1}}" >
   <view class="modal-title">
+  <view class='h5'>
+  获取答题密码请关注丁迩考研公众号后台回复：密码
+  </view>
+  <view class='margin-top'>
   
   <input  bindinput='shuru'  placeholder="请输入密码" style='border:1px solid gray;padding:20rpx'></input>
+  </view>
   
   </view>
 
