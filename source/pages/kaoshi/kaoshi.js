@@ -11,7 +11,10 @@ class Content extends AppBase {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
-    this.Base.setMyData({ xuanzhon: 1 });
+    this.Base.setMyData({ xuanzhon: 0 });
+      
+
+
   }
   bianli(qunzu, qunzuzu) {
 
@@ -36,11 +39,12 @@ class Content extends AppBase {
     var api = new InstApi();
     var qunzu = this.Base.getMyData().memberinfo.qunzu;
     api.kemu({}, (kemulist) => {
+      this.Base.setMyData({ xuanzhon: kemulist[0].id});
       api.kemuleibie({}, (kemuleibie) => {
-
+        console.log(kemuleibie);
 
         api.getshijuan({}, (shijuanlist) => {
-
+          console.log(shijuanlist);
 
           for (var i = 0; i < kemuleibie.length; i++) {
             if (kemuleibie[i].whopen_value == 'Y') {

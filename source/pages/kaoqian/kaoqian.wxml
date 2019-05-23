@@ -2,7 +2,7 @@
 
   <view  bindtap='shouye' >首页</view>
   <view class="flex-1"></view>
-  <view>{{shijuan[0].name}}</view>
+  <view>{{shijuan.name}}</view>
   <view class="flex-1"></view>
   <view  bindtap='fanhui'  >返回</view>
 </view>

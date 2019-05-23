@@ -26,7 +26,7 @@
 <view style='height:90rpx'></view>
 
 <view wx:if="{{dqt==1}}" class="text-center margin-top-20 txt-black ">
-  {{shijuan[0].zjjs}}
+  {{shijuan.zjjs}}
 
 </view>
 <view wx:if="{{dqt==1}}" style='width:100vw;border-bottom:1px solid black' class="margin-top-20"></view>

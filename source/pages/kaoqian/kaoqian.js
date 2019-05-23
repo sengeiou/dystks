@@ -16,7 +16,8 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
     var api = new InstApi();
-    api.getshijuan({ id: this.Base.options.id }, (shijuan) => {
+    
+    api.getshijuaninfo({ id: this.Base.options.id }, (shijuan) => {
       this.Base.setMyData({
         shijuan: shijuan
 

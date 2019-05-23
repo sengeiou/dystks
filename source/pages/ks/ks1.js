@@ -28,7 +28,7 @@ class Content extends AppBase {
     })
     var api = new InstApi();
     var that = this;
-    api.getshijuan({ id: this.Base.options.id }, (shijuan) => {
+    api.getshijuaninfo({ id: this.Base.options.id }, (shijuan) => {
 
       this.Base.setMyData({
         shijuan: shijuan

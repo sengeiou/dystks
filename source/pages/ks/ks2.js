@@ -28,7 +28,7 @@ class Content extends AppBase {
     })
     var api = new InstApi();
     var that = this;
-    api.getshijuan({ id: this.Base.options.id }, (shijuan) => {
+    api.getshijuaninfo({ id: this.Base.options.id }, (shijuan) => {
 
       this.Base.setMyData({
         shijuan: shijuan
@@ -516,6 +516,7 @@ class Content extends AppBase {
       content: '确定交卷吗？答题结果可以在成绩排名处查看',
 
       success: function (res) {
+
         if (res.confirm) {
           var timu = that.Base.getMyData().timu;
           var a1 = that.Base.getMyData().A1;
