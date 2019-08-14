@@ -82,12 +82,14 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
   <block wx:if="{{A2.length>0}}">
     <block wx:for="{{A2}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
+     
       <view id="q{{disciplinetm.seq}}" class="zidx">
         <view class="padding-20 txt-black h4-6 txt-bold1">
 
@@ -135,6 +137,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -189,6 +192,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -242,6 +246,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -348,6 +353,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -401,6 +407,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -454,6 +461,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -507,6 +515,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -560,6 +569,7 @@
 
 
         </view>
+        <ad unit-id="adunit-a2a56523ece8680b"></ad>
       </view>
     </block>
   </block>
@@ -573,7 +583,6 @@
 
 
 </view>
-
 
 
 

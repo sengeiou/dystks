@@ -39,7 +39,7 @@ class Content extends AppBase {
     }else{
       pg=pg.toString();
     }
-
+ 
 
     wx.navigateTo({
       url: '/pages/ks/ks' + pg + '?time=' + (new Date()).getTime()+'&id=' + this.Base.options.id,

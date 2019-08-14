@@ -7,13 +7,48 @@ class Content extends AppBase {
   constructor() {
     super();
   }
+  videoAd = null
   onLoad(options) {
     this.Base.Page = this;
     //options.id=5;
     super.onLoad(options);
     this.Base.setMyData({ xuanzhon: 0 });
       
+    if (wx.createRewardedVideoAd) {
 
+      this.videoAd = wx.createRewardedVideoAd({
+        adUnitId: 'adunit-ad1a7e5364d88607'
+      })
+      this.videoAd.onLoad(() => {
+        console.log("1231111111111131");
+
+
+      })
+      this.videoAd.onError((err) => {
+        console.log('onError event emit', err)
+      })
+      this.videoAd.onClose((res) => {
+        if (res && res.isEnded) {
+          var id = this.Base.getMyData().danqianzhanjie;
+          var date = new Date();
+          var Y = date.getFullYear();
+          var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+          var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+          var sj = (Y + '-' + M + '-' + D);
+          console.log(sj + '-' + id);
+          wx.setStorage({
+            key: sj + '-' + id,
+            data: 111,
+          });
+          this.Base.toast("观看成功");
+        } else {
+          this.Base.toast("观看失败");
+          console.log("中途退出");
+          // 播放中途退出，不下发游戏奖励
+        }
+
+      })
+    }
 
   }
   bianli(qunzu, qunzuzu) {
@@ -77,6 +112,49 @@ class Content extends AppBase {
 
   }
   gotoCat1(e) {
+
+
+
+    var that = this;
+    var date = new Date();
+    var Y = date.getFullYear();
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var sj = (Y + '-' + M + '-' + D);
+    var jiancha = wx.getStorageSync(
+      sj + '-' + e.currentTarget.id,
+    )
+    console.log(sj + '-' + e.currentTarget.id);
+    console.log("牛逼");
+    console.log(jiancha);
+    if (e.currentTarget.dataset.id == 'Y' && jiancha != '111') {
+
+
+      this.Base.setMyData({ danqianzhanjie: e.currentTarget.id })
+      wx.showModal({
+
+        content: '看个视频广告今天就可以无限看' + e.currentTarget.dataset.name + '啦!',
+
+        success: function (res) {
+          if (res.confirm) {
+            console.log(that.videoAd);
+            that.videoAd.show();
+
+          } else {
+
+          }
+        }
+      })
+
+      return
+    }
+
+
+
+
+
+
+
     var xuanzhon1 = this.Base.getMyData().xuanzhon1;
 
     var id = e.currentTarget.id;
@@ -149,7 +227,7 @@ class Content extends AppBase {
     var zsmm = this.Base.getMyData().zsmm;
     console.log(zsmm);
 
-    api.mima({ mima: mima, shijuan_id: shijuan, member_id: member_id, status: 'A' }, (res) => {
+    api.mima({ mima: mima, coursesct_id: shijuan, member_id: member_id, status: 'A' }, (res) => {
 
 
       console.log(zsmm);

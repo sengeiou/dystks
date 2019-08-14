@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/kaoqian/kaoqian",
     "pages/kaoshi/kaoshi",
@@ -17,7 +17,7 @@
     "pages/auth/auth",
     "pages/questions/questions"
   ],
-   "permission": {
+  "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
@@ -45,13 +45,11 @@
         "iconPath": "images/icons/中医灰.png",
         "selectedIconPath": "images/icons/中医(2).png"
       }
-     
     ]
-    
-  }
-  ,
+  },
   "navigateToMiniProgramAppIdList": [
     "wxce8dfd9950dacbe7",
     "wx59cda72fdbc6ef18"
-  ]
+  ],
+  "sitemapLocation": "sitemap.json"
 }
