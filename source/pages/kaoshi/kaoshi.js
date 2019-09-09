@@ -113,7 +113,22 @@ class Content extends AppBase {
   }
   gotoCat1(e) {
 
+    if (this.Base.getMyData().memberinfo.nickName == undefined || this.Base.getMyData().memberinfo.nickName =='') {
 
+      wx.showModal({
+        title: '提示',
+        content: '你还没有登录,请到首页点击授权并登录',
+        showCancel: false,
+        success: (() => {
+          wx.switchTab({
+            url: '/pages/home/home',
+          })
+
+        })
+      })
+      return
+
+    }
 
     var that = this;
     var date = new Date();
@@ -177,7 +192,9 @@ class Content extends AppBase {
 
     var jiesuoshu = e.currentTarget.dataset.lian;
     var danqian = e.currentTarget.dataset.dan;
-
+    console.log(jiesuoshu);
+    console.log(danqian);
+  
     if (jiesuoshu > danqian) {
       this.Base.setMyData({
         showModal: true,
@@ -227,7 +244,7 @@ class Content extends AppBase {
     var zsmm = this.Base.getMyData().zsmm;
     console.log(zsmm);
 
-    api.mima({ mima: mima, coursesct_id: shijuan, member_id: member_id, status: 'A' }, (res) => {
+    api.mima({ mima: mima, shijuan_id: shijuan, member_id: member_id, status: 'A' }, (res) => {
 
 
       console.log(zsmm);

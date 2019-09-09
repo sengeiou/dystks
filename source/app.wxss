@@ -7,7 +7,12 @@
 page{
   background: white;
 }
-
+.zjguanggao{
+ 
+ position: fixed;
+ bottom:0;
+ width: 100vw;
+}
 
 .clear-button{ 
   padding: 0rpx;

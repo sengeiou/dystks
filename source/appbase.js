@@ -24,7 +24,7 @@ export class AppBase {
   static UserInfo = {};
   static InstInfo = {};
   unicode = "kystks";
-  needauth = true;
+  needauth = false;
   pagetitle = null;
   app = null;
   options = null;
@@ -216,6 +216,7 @@ fanhui: base.fanhui
     if (AppBase.UserInfo.openid == undefined) {
       // 登录
       console.log("onShow");
+     
       wx.login({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -231,7 +232,7 @@ fanhui: base.fanhui
                 grant_type: "authorization_code"
               }, data => {
                 console.log("here");
-                console.log(data);
+                console.log(data); 
                 AppBase.UserInfo.openid = data.openid;
                 AppBase.UserInfo.session_key = data.session_key;
                 console.log(AppBase.UserInfo);

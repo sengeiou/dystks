@@ -9,11 +9,12 @@
 </view>
 
 
-
 <view class="flex-row flex-center bg-primary padding-30">
   <image class='icon-50 radius-50' src="{{UserInfo.avatarUrl}}" style='border:5rpx solid white'> </image>
-  <view class="txt-white margin-left-20">{{UserInfo.nickName}}</view>
+  <view  class="txt-white margin-left-20">{{UserInfo.nickName}}</view>
+   <view wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" class="txt-white margin-left-20">未登录</view>
 </view>
+<button wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" style="color:#4c556e;background:#ffffff" class='h5 margin-bottom-10' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权并登录</button>
 
 <!-- 
 <navigator url='/pages/errordatabase/errordatabase' class="padding-30 flex-row flex-center border-bottom bg-white">
@@ -44,6 +45,7 @@
 
 
 <official-account></official-account>
+<view class="height-100"></view>
 <view class='  bg-primary txt-white Advertising' style=' width:100%;'>
-<ad unit-id="adunit-9d046c15e958fc98"></ad>
+<ad unit-id="adunit-b9fa903ffcdacb39" ad-type="video" ad-theme="white"></ad>
 </view>

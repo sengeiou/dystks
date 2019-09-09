@@ -29,7 +29,13 @@
       </view>
     </view>
   </bolck>
-<ad unit-id="adunit-8211f083a5cbf2b5"></ad>
+<view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
+     <ad unit-id="adunit-8211f083a5cbf2b5"></ad>
+    </view>
+
+
+
+
 </view>
 <view wx:if="{{xuanzhon==1}}">
 <view class="h6 text-balck text-center padding-10" >(此排行榜仅显示历次答题最高分排名)</view>

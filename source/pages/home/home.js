@@ -12,6 +12,7 @@ class Content extends AppBase {
     //options.id=5;
     var api = new MemberApi();
     var that=this;
+    
     super.onLoad(options);
     api.info({}, (info) => {
       this.Base.setMyData({ memberinfo: info });
@@ -31,6 +32,16 @@ class Content extends AppBase {
     api.indexbanner({}, (indexbanner) => {
       this.Base.setMyData({ indexbanner });
     }, false)
+  }
+  getUserInfo() {
+
+    AppBase.UserInfo.openid = undefined;
+
+
+
+    this.onShow();
+
+
   }
   lianxi(){
     wx.navigateToMiniProgram({
@@ -85,4 +96,5 @@ body.onMyShow = content.onMyShow;
 body.xuexi = content.xuexi;
 body.lianxi=content.lianxi;
 body.jiazai=content.jiazai;
+body.getUserInfo = content.getUserInfo;
 Page(body)
