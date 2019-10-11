@@ -22,7 +22,7 @@ Page {
 }
 
 .Advertising {
-  position: absolute;
+  margin-top:30rpx;
   bottom: 0;
   width: 100%;
 }

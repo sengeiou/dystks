@@ -1,13 +1,13 @@
 export class ApiConfig {
 
   static GetApiUrl() {
-    return "https://cmsdev.app-link.org/alucard263096/kystks/api/";
+    return "https://kyst.dingerkaoyan.com.cn/api/";
   }
   static GetUploadPath() {
-    return "https://alioss.app-link.org/alucard263096/kystks/";
+    return "https://kyst.oss-cn-qingdao.aliyuncs.com/";
   }
   static GetFileUploadAPI() {
-    return "https://cmsdev.app-link.org/alucard263096/kystks/fileupload";
+    return "https://kyst.dingerkaoyan.com.cn/fileupload";
   }
 
   static GetHeader() {

@@ -43,9 +43,9 @@
   </view>
 </button>
 
+ 
 
-<official-account></official-account>
-<view class="height-100"></view>
 <view class='  bg-primary txt-white Advertising' style=' width:100%;'>
 <ad unit-id="adunit-b9fa903ffcdacb39" ad-type="video" ad-theme="white"></ad>
 </view>
+<official-account></official-account>
