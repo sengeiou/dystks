@@ -1,13 +1,13 @@
 export class ApiConfig {
 
   static GetApiUrl() {
-    return "https://kyst.dingerkaoyan.com.cn/api/";
+    return "https://kystks.dingerkaoyan.com.cn/api/";
   }
   static GetUploadPath() {
-    return "https://kyst.oss-cn-qingdao.aliyuncs.com/";
+    return "https://kystks.oss-cn-qingdao.aliyuncs.com/";
   }
   static GetFileUploadAPI() {
-    return "https://kyst.dingerkaoyan.com.cn/fileupload";
+    return "https://kystks.dingerkaoyan.com.cn/fileupload";
   }
 
   static GetHeader() {
