@@ -71,9 +71,46 @@ class Content extends AppBase {
     return false;
   }
   onMyShow() {
+    var that=this;
     var api = new InstApi();
     var qunzu = this.Base.getMyData().memberinfo.qunzu;
     api.kemu({}, (kemulist) => {
+
+      var qunzu = that.Base.getMyData().memberinfo.qunzu;
+        
+    
+      for (var i = 0; i < kemulist.length; i++) {
+        kemulist[i].xianshi = false;
+        if (kemulist[i].whopen_value == 'Y') {
+
+          kemulist[i].xianshi = true;
+        }
+        else {
+          console.log("进来了");
+          console.log(kemulist);
+          var qunzuzu = kemulist[i].qunzu.split(",");
+          if (qunzuzu != "" && qunzu[0].qunzu != "") {
+            console.log(11111);
+            console.log(222222);
+            console.log(qunzu);
+            console.log(qunzuzu);
+            kemulist[i].xianshi = this.bianli(qunzu, qunzuzu);
+          }
+
+        }
+      }
+      kemulist = kemulist.filter((item) => {
+
+        return item.xianshi == true;
+
+      })
+
+
+
+
+
+
+
       this.Base.setMyData({ xuanzhon: kemulist[0].id});
       api.kemuleibie({}, (kemuleibie) => {
         console.log(kemuleibie);
