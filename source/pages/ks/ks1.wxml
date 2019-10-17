@@ -10,7 +10,7 @@
 
   <view class='  flex-row flex-column'>
 
-    <view class=' margin-top-5 txt-black h4'>答题</view>
+    <view class=' margin-top-5 txt-black f-32 chaochu'>{{shijuan.name}}</view>
   </view>
 
 
@@ -35,7 +35,7 @@
     <block wx:for="{{A1}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="  {{disciplinetm.seq==1?'zidx1':'zidx'}} " >
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -48,8 +48,8 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
@@ -57,7 +57,7 @@
           </block>
           <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -72,8 +72,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -91,7 +91,7 @@
       <!-- 多选未答题 -->
      
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -104,15 +104,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
           <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -127,8 +127,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -145,7 +145,7 @@
     <block wx:for="{{A3}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -158,8 +158,8 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
 
@@ -167,7 +167,7 @@
           </block>
           <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -182,8 +182,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -200,7 +200,7 @@
     <block wx:for="{{A4}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -213,15 +213,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
           <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -236,8 +236,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -254,7 +254,7 @@
     <block wx:for="{{A5}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -267,15 +267,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
  <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -290,8 +290,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -307,7 +307,7 @@
     <block wx:for="{{A6}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -320,15 +320,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
  <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -343,8 +343,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -361,7 +361,7 @@
     <block wx:for="{{A7}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -374,15 +374,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
  <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -397,8 +397,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -415,7 +415,7 @@
     <block wx:for="{{A8}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -428,15 +428,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
  <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -451,8 +451,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -469,7 +469,7 @@
     <block wx:for="{{A9}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -482,15 +482,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
  <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -505,8 +505,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>
@@ -523,7 +523,7 @@
     <block wx:for="{{A10}}" wx:if="{{disciplinetm.seq==dqt}}" wx:key="k" wx:for-index="tihao" wx:for-item="disciplinetm">
       <!-- 多选未答题 -->
       <view id="q{{disciplinetm.seq}}" class="zidx">
-        <view class="padding-20 txt-black h4-6 txt-bold1">
+        <view class="padding-20 txt-black h4-5 txt-bold1">
 
           {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type_name}}）
         </view>
@@ -536,15 +536,15 @@
               <view class="flex-row  txt-black">
                 <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-                <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{duoxuan[1]}}</view>
               </view>
             </view>
           </block>
  <view class="flex-row  " style='margin-top:70rpx;'>
             <view class="flex-1"></view>
-            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
+            <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view>
             <view class="flex-1"></view>
           </view>
         </view>
@@ -559,8 +559,8 @@
                 <image wx:if="{{disciplinetm.xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
                 <image wx:if="{{disciplinetm.xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-                <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-                <view class="flex-1 txt-black h4-6 txt-bold1">
+                <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+                <view class="flex-1 txt-black h4-5 txt-bold1">
                   {{item[1]}}</view>
               </view>
             </view>

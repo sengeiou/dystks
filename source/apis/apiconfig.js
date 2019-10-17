@@ -10,6 +10,16 @@ export class ApiConfig {
     return "https://kystks.dingerkaoyan.com.cn/fileupload";
   }
 
+  // static GetApiUrl() {
+  //   return "https://cmsdev.app-link.org/alucard263096/kystks/api/";
+  // }
+  // static GetUploadPath() {
+  //   return "https://alioss.app-link.org/alucard263096/kystks/";
+  // }
+  // static GetFileUploadAPI() {
+  //   return "https://cmsdev.app-link.org/alucard263096/kystks/fileupload";
+  // }
+
   static GetHeader() {
     var headers = {
       'Content-Type': 'application/x-www-form-urlencoded',

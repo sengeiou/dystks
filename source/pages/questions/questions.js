@@ -25,15 +25,23 @@ class Content extends AppBase {
     });
     var that = this;
     var timuid = this.Base.options.idd;
-    
+
     var d = new Date().getTime();
     console.log("接收到的参数" + 'id' + timuid);
     var disciplinetm = wx.getStorageSync(
 
-      this.Base.options.cishu+'id' + timuid,
+      this.Base.options.cishu + 'id' + timuid,
 
     )
+    var api = new InstApi();
     var disciplinetm = JSON.parse(disciplinetm);
+    api.getshijuaninfo({ id: disciplinetm.shijuan_id }, (shijuan) => {
+
+      console.log(shijuan);
+      this.Base.setMyData({
+        shijuan: shijuan
+      })
+    })
 
     for (var i = that.Base.getMyData().tmid; i <= that.Base.getMyData().tmid; i++) {
 
@@ -97,12 +105,12 @@ class Content extends AppBase {
     wx.getStorage({
       key: this.Base.options.cishu,
       success: function (res) {
-    console.log(777777777777777777);
+        console.log(777777777777777777);
         //  var d1 = new Date().getTime() - d;
         //  that.Base.info(d1.toString());
 
 
-      
+
         var jsonStr = res.data.replace(/\ufeff/g, ""); //重点
         var disciplinetm = JSON.parse(jsonStr);
 
@@ -146,7 +154,7 @@ class Content extends AppBase {
           }
           disciplinetm[i].title_anwser = disciplinetm[i].title_anwser.replace(/ /g, "&nbsp;");
         }
-        
+
         console.log(disciplinetm[that.Base.getMyData().tmid]);
         console.log("重点");
         that.Base.setMyData({
@@ -155,11 +163,11 @@ class Content extends AppBase {
         });
       },
     })
-    
+
   }
   onMyShow() {
     var that = this;
-   
+
 
     // var d = new Date().getTime();
     // wx.getStorage({
@@ -307,7 +315,7 @@ class Content extends AppBase {
   //       yc: false
   //     })
 
-     
+
 
 
 
@@ -573,7 +581,7 @@ class Content extends AppBase {
 
       success: function (res) {
         if (res.confirm) {
-         
+
           api.delquestionjl({
             member_id: that.Base.getMyData().memberinfo.id,
             coursesct_id: coursesct_id,
@@ -627,11 +635,11 @@ class Content extends AppBase {
       this.syt();
     }
   }
-  paihanban(){
+  paihanban() {
     var id = this.Base.getMyData().disciplinetm.shijuan_id;
-  wx.navigateTo({
-    url: '/pages/cjph/cjph?id='+id,
-  })
+    wx.navigateTo({
+      url: '/pages/cjph/cjph?id=' + id,
+    })
 
 
   }

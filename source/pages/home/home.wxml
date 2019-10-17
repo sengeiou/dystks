@@ -8,13 +8,24 @@
   </swiper>
 </view>
 
+<button wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" class="clear-button btns"  open-type="getUserInfo" bindgetuserinfo="getUserInfo">
 
 <view class="flex-row flex-center bg-primary padding-30">
+  <image class='icon-50 radius-50' src="{{uploadpath}}resource/{{res.weidenglutouxiang}}" > </image>
+  <!-- <view  class="txt-white margin-left-20">{{UserInfo.nickName}}</view> -->
+   <view wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" class="txt-white margin-left-20">点击登录</view>
+</view>
+
+</button>
+
+
+<view class="flex-row flex-center bg-primary padding-30" wx:if="{{memberinfo.nickName!=''&&memberinfo.nickName!=undefined}}">
   <image class='icon-50 radius-50' src="{{UserInfo.avatarUrl}}" style='border:5rpx solid white'> </image>
   <view  class="txt-white margin-left-20">{{UserInfo.nickName}}</view>
-   <view wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" class="txt-white margin-left-20">未登录</view>
+   <!-- <view wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" class="txt-white margin-left-20">点击登录</view> -->
 </view>
-<button wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" style="color:#4c556e;background:#ffffff" class='h5 margin-bottom-10' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权并登录</button>
+
+<!-- <button wx:if="{{memberinfo.nickName==''||memberinfo.nickName==undefined}}" style="color:#4c556e;background:#ffffff" class='h5 margin-bottom-10' open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权并登录</button> -->
 
 <!-- 
 <navigator url='/pages/errordatabase/errordatabase' class="padding-30 flex-row flex-center border-bottom bg-white">

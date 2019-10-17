@@ -28,7 +28,7 @@
       class='adsad'>
       <view class='flex-row flex-center margin-30 padding-bottom-30' style='border-bottom:1rpx solid gray'>
 
-        <view class='flex-1 txt-black h5 '>{{item1.name}}</view>
+        <view class='flex-1 txt-black h5 chaochu'>{{item1.name}}</view>
         <view></view>
         <image wx:if="{{!(item1.ifunlock<item1.unlocknum||(item1.password!=''&&item1.zq==0)) }}" class='icon-15 margin-left-10' src='{{uploadpath}}resource/{{res.you_icon}}'></image>
 

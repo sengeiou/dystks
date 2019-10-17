@@ -40,3 +40,7 @@ Page {
   border-radius: 15rpx;
 }
 
+.btns {
+  width: 100vw;
+  border-radius: 0px;
+}

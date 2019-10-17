@@ -10,7 +10,7 @@
 
   <view bindtap='' class='  flex-row flex-column'>
 
-    <view class=' margin-top-5 txt-black h4'>考试回顾</view>
+    <view class=' margin-top-5 txt-black f-32 chaochu'>{{shijuan.name}}</view>
   </view>
 
 
@@ -29,7 +29,7 @@
 
 <scroll-view scroll-y bindtouchstart='touchStart' bindtouchend="touchEnd" class='white-block gaodu   '>
 
-  <view class="padding-20 txt-black h4-6 txt-bold1">
+  <view class="padding-20 txt-black h4-5 txt-bold1">
 
     {{disciplinetm.seq}}.{{disciplinetm.title}}（{{disciplinetm.type=='R'?'单选题':'多选题'}}）
   </view>
@@ -42,8 +42,8 @@
         <view class="flex-row  txt-black">
           <image wx:if="{{!disciplinetm.status_name[idx][2]}}" class='icon-20' src='/images/icons/wuxuanxiang.png'></image>
           <image wx:if="{{disciplinetm.status_name[idx][2]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
-          <view class="margin-left-10 txt-black  h4-6 txt-bold1">{{duoxuan[0]}}.</view>
-          <view class="flex-1 txt-black h4-6 txt-bold1">
+          <view class="margin-left-10 txt-black  h4-5 txt-bold1">{{duoxuan[0]}}.</view>
+          <view class="flex-1 txt-black h4-5 txt-bold1">
             {{duoxuan[1]}}</view>
         </view>
       </view>
@@ -121,7 +121,7 @@
 
     <view class="flex-row  " style='margin-top:70rpx;'>
       <view class="flex-1"></view>
-      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> 
+      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5  tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> 
       <view class="flex-1"></view>
     </view>
     <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
@@ -138,8 +138,8 @@
           <image wx:if="{{xz!=item[0]}}" class='icon-20 ' src='/images/icons/wuxuanxiang.png'></image>
           <image wx:if="{{xz==item[0]}}" class='icon-20 ' src='/images/icons/xuanze.png'></image>
 
-          <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-          <view class="flex-1 txt-black h4-6 txt-bold1">
+          <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+          <view class="flex-1 txt-black h4-5 txt-bold1">
             {{item[1]}}</view>
         </view>
       </view>
@@ -147,7 +147,7 @@
 
     <view class="flex-row  " style='margin-top:70rpx;'>
       <view class="flex-1"></view>
-      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-6 tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> 
+      <!-- <view wx:if="{{disciplinetm.type=='S'}}" class="txt-black txt-bold1 h4-5 tjdn " bindtap='tjdn' data-daan="{{disciplinetm.anwser}}" data-id="{{disciplinetm.id}}">提交答案</view> 
       <view class="flex-1"></view>
     </view>
     <view class="flex-row  zjguanggao " style='margin-top:30rpx;'>
@@ -173,8 +173,8 @@
             <view>
               <image wx:if="{{(disciplinetm.anwser!=disciplinetm.isanwser&&disciplinetm.isanwser==item[0])||(daan!=disciplinetm.anwser&&daan==item[0])}}" class='icon-20 ' src='/images/icons/xuancuole.png'></image>
             </view>
-            <view class="margin-left-10 txt-black h4-6 txt-bold1">{{item[0]}}.</view>
-            <view class="flex-1 h4-6 txt-black txt-bold1">
+            <view class="margin-left-10 txt-black h4-5 txt-bold1">{{item[0]}}.</view>
+            <view class="flex-1 h4-5 txt-black txt-bold1">
               {{item[1]}}</view>
           </view>
 
@@ -228,8 +228,8 @@
             <view>
               <image wx:if="{{disciplinetm[item[3]]==-1&&disciplinetm[item[4]]>=0}}" class='icon-20 ' src='/images/icons/xuancuole.png'></image>
             </view>
-            <view class="margin-left-10 h4-6 txt-black txt-bold1">{{item[0]}}. </view>
-            <view class="flex-1 h4-6 txt-black txt-bold1">
+            <view class="margin-left-10 h4-5 txt-black txt-bold1">{{item[0]}}. </view>
+            <view class="flex-1 h4-5 txt-black txt-bold1">
               {{item[1]}}</view>
           </view>
 

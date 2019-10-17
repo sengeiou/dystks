@@ -29,7 +29,7 @@ class Content extends AppBase {
     var api = new InstApi();
     var that = this;
     api.getshijuaninfo({ id: this.Base.options.id }, (shijuan) => {
-
+      console.log(shijuan,'shijuanshijuan');
       this.Base.setMyData({
         shijuan: shijuan
       })
