@@ -89,7 +89,7 @@ class Content extends AppBase {
           console.log("进来了");
           console.log(kemulist);
           var qunzuzu = kemulist[i].qunzu.split(",");
-          if (qunzuzu != "" && qunzu[0].qunzu != "") {
+          if (qunzuzu != "" && qunzu.length != 0&& qunzu[0].qunzu != "") {
             console.log(11111);
             console.log(222222);
             console.log(qunzu);
@@ -125,7 +125,7 @@ class Content extends AppBase {
             }
             else {
               var qunzuzu = kemuleibie[i].qunzu.split(",");
-              if (qunzuzu != "" && qunzu[0].qunzu != "") {
+              if (qunzuzu != "" && qunzu.length != 0 && qunzu[0].qunzu != "") {
                 console.log(11111);
                 console.log(222222);
                 console.log(qunzu);
